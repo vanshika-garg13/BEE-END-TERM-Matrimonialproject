@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+
+
+<div class = "container">
+    <h1 style = "text-align: center;"> EDIT <%= bachelor.name %> </h1>
+
+    <div style="width: 30%; margin: 0 auto; ">
+        <form action="/bachelors/<%= bachelor._id %>?_method=PUT" method = "POST">
+            <div class = "form-group">
+                <input class = "form-control" type = "text" name = "bachelor[name]" value ="<%= bachelor.name%>">
+            </div>
+            <div class = "form-group">
+                <input class = "form-control" type = "text" name = "bachelor[image]" value ="<%= bachelor.image%>">
+            </div>
+            <div class = "form-group">
+                <input class = "form-control" type = "text" name = "bachelor[description]" value ="<%= bachelor.description%>">
+            </div>
+            <div class = "form-group">
+                <button class = "btn btn-lg btn-primary btn-block"> Submit!</button>   
+            </div>
+            
+        </form>
+        <a href = "/bachelors"> Go Back to Profiles </a>
+    </div>
+
+
+    
+</div>
+
+
+<%- include("../partials/footer") %>

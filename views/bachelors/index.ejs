@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+
+
+    
+
+        <header class = "jumbotron">
+            <div class = "container">
+                <h1> Welcome to Matrimonial website! </h1>
+		<hr class="my-4">
+                <p> View our hand-picked bachelors from all over India and Nepal </p>
+                <p>
+                    <a class = "btn btn-primary btn-large" href ="/bachelors/new"> Add new Profile </a>
+                </p>
+            </div>
+        </header>
+
+
+    
+    <div class = "row text-center" style = "display:flex; flex-wrap:wrap">
+        <% bachelors.forEach(function(bachelor){ %>
+            <div class ="col-md-3 col-sm-6">
+                <div class = "thumbnail"> 
+                    <img src = "<%= bachelor.image %>"> 
+                    <div class = "caption">
+                        <h4> <%= bachelor.name %> </h4>
+                    </div>
+                    <p>
+                        <a href = "/bachelors/<%= bachelor._id %>" class = "btn btn-primary"> More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+   
+
+    
+        
+
+<%- include("../partials/footer") %>
